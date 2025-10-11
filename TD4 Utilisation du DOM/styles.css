@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(#09C, #9C0)
+}
+
+/*********************/
+/* Le bouton du milieu */
+/*********************/
+main {
+    display: flex;
+    height: 100vh;
+    padding: 10px;
+}
+
+main>button {
+    margin: auto;
+    border: none;
+    padding: 40px;
+    font-size: 40px;
+    border-radius: 20px;
+    outline: none;
+    /* Pour le cadre bleu qui vient autour du bouton */
+    box-shadow: 4px 8px 8px #424242;
+    transition: 0.2s;
+}
+
+main>button:hover {
+    background: #f0f0f0;
+}
+
+main>button:active {
+    transform: translate(4px, 8px);
+    box-shadow: 0 0 0 #424242;
+}
+
+/*********************/
+/* L'animation de fin de page */
+/*********************/
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+@keyframes grow {
+
+    /* Par défaut c'est scaleY(1) */
+    25% {
+        transform: scaleY(10)
+    }
+
+    50% {
+        transform: scaleY(1)
+    }
+
+    /* Ca reste à scaleY(1) jusqu'à la fin comme c'est la valeur par défaut */
+}
+
+footer>div {
+    border-radius: 50% 50% 0 0;
+    width: 100%;
+    /* Astuce : avec le flex, la taille sera réduite pour que tous les éléments rentrent, on s'assure alors que ça prenne toute la place en mettant 100%, mais en vrai ce sera plus petit. */
+    margin: 0 2% 0 2%;
+    background: #424242;
+    height: 20px;
+    animation: grow 1s infinite ease-in-out;
+    transform-origin: 50% 100%;
+    /* Pour que ça grandisse depuis le bas */
+}
+
+footer>div:nth-child(2) {
+    animation-delay: 0.1s
+}
+
+footer>div:nth-child(3) {
+    animation-delay: 0.2s
+}
+
+footer>div:nth-child(4) {
+    animation-delay: 0.3s
+}
+
+footer>div:nth-child(5) {
+    animation-delay: 0.4s
+}
+
+footer>div:nth-child(6) {
+    animation-delay: 0.5s
+}
+
+footer>div:nth-child(7) {
+    animation-delay: 0.6s
+}
+
+footer>div:nth-child(8) {
+    animation-delay: 0.7s
+}
+
+footer>div:nth-child(9) {
+    animation-delay: 0.8s
+}
+
+footer>div:nth-child(10) {
+    animation-delay: 0.9s
+}
+
+/**************************/
+/* Pause */
+/**************************/
+.pause>footer>div {
+    animation-play-state: paused;
+}
+
+/**************************/
+/* Objets aléatoires */
+/**************************/
+.UFO {
+    position: fixed;
+    background: #424242;
+    height: 30px;
+    width: 100px;
+    border-radius: 100%;
+    filter: drop-shadow(0 0 4px #FFF);
+    animation: vol 0.3s infinite alternate ease-in-out;
+}
+
+.UFO:before {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    left: 35px;
+    background: #424242;
+    height: 30px;
+    width: 30px;
+    border-radius: 100% 100% 0 0;
+}
+
+@keyframes vol {
+    0% {
+        transform: rotate(-10deg)
+    }
+
+    100% {
+        transform: rotate(10deg)
+    }
+}

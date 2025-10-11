@@ -1,0 +1,15 @@
+#map {
+    height: 50vh;
+    width: 50vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab {
+    height: 50vh;
+    width: 50vw;
+}

@@ -1,0 +1,45 @@
+.barContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    background-color: black;
+    height: 20px;
+    width: 0;
+}
+
+.grille {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 10px 1fr 1fr 1fr 10px 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 10px 1fr 1fr 1fr 10px 1fr 1fr 1fr;
+    height: fit-content;
+    width: fit-content;
+    gap: 5px;
+    padding: 10px;
+    background-color: #1e1e1e;
+}
+
+.grille .case {
+    display: grid;
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grille .locked {
+    background-color: #dbd387;
+}
+input {
+    border: none;
+    width: 9px;
+}
+
+.bor{
+    background-color: rgb(255, 85, 0);
+    border-radius: 10px;
+}

@@ -1,0 +1,40 @@
+header {
+    grid-area: header;
+    background: rgb(92, 194, 227);
+}
+nav {
+    grid-area: nav;
+    background-color: rgb(238, 238, 74);
+}
+.z1 {
+    grid-area: z1;
+    background: rgb(196, 196, 3);
+}
+.z2 {
+    grid-area: z2;
+    background: rgb(213, 79, 213);
+}
+.ad {
+    grid-area: ad;
+    background: rgb(156, 214, 246);
+}
+footer {
+    grid-area: footer;
+    background: rgb(243, 165, 243);
+}
+
+header, nav, .z1, .z2, .ad, footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50px 3fr 1fr;
+    grid-template-areas:
+        "nav header header"
+        "z1 z1 ad"
+        "z2 z2 z2"
+        "footer footer footer";
+}

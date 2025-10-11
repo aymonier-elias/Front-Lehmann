@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    gap: 50px;
+    padding: 20px 40px;
+}
+
+.nav {
+    position: fixed;
+    inset: 0;
+    background-color: gray;
+    padding-top: 40px;
+    display: flex;
+    transition: .5s ease ;
+}
+.nav[aria-hidden=true] {
+    visibility: hidden;
+    position: absolute;
+    transform: translate(-100%);
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    position: fixed;
+    inset: 0;
+    background-color: var(--green-dark);
+}
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+.nav ul li {
+    border: solid black 2px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+main div {
+    display: flex;
+    gap: 10px;
+    border: solid 1px black;
+    margin-bottom: 20px;
+}
+
+.btn {
+    position: relative;
+    background: none;
+    border: none;
+    height: auto;
+    width: 30px;
+    z-index: 4;
+}
+
+.menu__btn-bars,
+.menu__btn-bars::before,
+.menu__btn-bars::after{
+    content: "";
+    background-color: black;
+    height: 2.5px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transition: 0.5s ease;
+}
+.menu__btn-bars::before{
+    top: -10px
+}
+.menu__btn-bars::after{
+    top: 10px;
+}
+
+.btn[aria-expanded="true"] .menu__btn-bars {
+    background-color: gray;
+}
+.btn[aria-expanded="true"] .menu__btn-bars::before{
+    transform: rotate(-135deg);
+    top: 0;
+}
+.btn[aria-expanded="true"] .menu__btn-bars::after{
+    transform: rotate(135deg);
+    top: 0;
+}
+
+@media (min-width: 550px) {
+    .nav {
+        width: 200px;
+    }
+}
+@media (min-width: 950px) {
+    .nav[aria-hidden=true] {
+        position: relative;
+        visibility: visible;
+        transform: translate(0);
+        background: gray;
+    }
+    .btn {
+        display: none;
+    }
+    main {
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+    body {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+    }
+    header {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}

@@ -1,0 +1,7 @@
+.container {
+    grid-template-columns: 100px 1fr 2fr auto; 
+    grid-template-areas: 
+    "header header header header"
+    "nav z1 z2 ad"
+    "nav footer footer footer";
+}

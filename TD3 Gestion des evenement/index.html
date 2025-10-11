@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body id="body">
+    <h1>AddEventListener</h1>
+    <h2>Key Listener</h2>
+
+    <p>Apuie sur une touche après avoir clicker sur la page: </p>
+
+    <p id="demo"></p>
+
+    <h2>Mouse Listener</h2>
+
+
+
+    <script>
+        const zdkzld = document.querySelector("#body");
+        zdkzld.addEventListener("keydown", () => {
+            myFunction(event);
+        })
+
+        function myFunction(event) {
+            let key = event.key;
+            document.getElementById("demo").innerHTML = `Je devine que tu a apuiyer sur : ${key}`;
+            if (event.ctrlKey) {
+                document.getElementById("demo").innerHTML = `Je devine que tu a apuiyer sur : Control + ${key}`;
+
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
