@@ -1,0 +1,48 @@
+body {
+    background: radial-gradient(#424242, #000);
+    overflow: hidden;
+}
+
+main {
+    height: 100vh;
+}
+
+main>div,
+main>div>div>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+
+    height: var(--distance);
+    width: var(--distance);
+
+    animation: tourne var(--temps) infinite linear -204s;
+}
+
+.soleil {
+    border: none;
+    background: yellow;
+    transform: translate(-50%, -50%);
+}
+
+main>div>div,
+main>div>div>div>div {
+    height: var(--taille);
+    width: var(--taille);
+    background: var(--couleur);
+    border-radius: 50%;
+    margin: auto;
+    transform: translateY(-50%);
+}
+
+@keyframes tourne {
+    0% {
+        transform: translate(-50%, -50%) rotate(0)
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg)
+    }
+}
